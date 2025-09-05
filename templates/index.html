@@ -1,17 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lovecalc</title>
+    <style>
+        /* Splošni stil za telo strani */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Stil za glavni naslov */
+        h1 {
+            font-size: 2.5rem;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        /* Slog za obrazec */
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 300px;
+        }
+
+        /* Slog za vhodna polja */
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #e74c3c;
+            outline: none;
+        }
+
+        /* Slog za gumb za pošiljanje */
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #c0392b;
+        }
+
+        /* Slog za prikaz rezultata */
+        .rezultat {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>izračunaj lubezn</h1>
 
     <form action="/calcLove" method="post">
-        <input type="text" name="ime1" id="ime1">
-        <input type="text" name="ime2" id="ime2">
+        <input type="text" name="ime1" id="ime1" placeholder="Vnesite ime 1" required>
+        <input type="text" name="ime2" id="ime2" placeholder="Vnesite ime 2" required>
     
         <input type="submit" value="<3">
     </form>
-    {{  rez  }}
+    
+    <div class="rezultat">
+        {{ rez }}
+    </div>
 </body>
 </html>
